@@ -1,0 +1,12 @@
+FROM ubuntu:22.04
+
+ENV DEBIAN_FRONTEND noninteractive
+
+RUN apt update
+RUN apt install -y x11-apps xauth
+RUN apt install -y iproute2 iputils-ping
+RUN groupadd -g 1000 user
+RUN useradd -d /home/user -s /bin/bash -m user -u 1000 -g 1000
+USER user
+ENV HOME /home/user
+CMD xeyes
