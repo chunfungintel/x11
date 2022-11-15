@@ -1,0 +1,8 @@
+version: "3"
+services:
+  x11:
+    container_name: x11
+    build:
+      context: .
+      dockerfile: dockerfile
+    image: gar-registry.caas.intel.com/virtiot/x11-test
